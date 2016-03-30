@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!--导入jQuery库-->
+  <script type="text/javascript" src="jquery-1.11.3.js"></script>
+  <script type="text/javascript">
+  <!--
+	$(function(){
+		$("#checkall").click(function(){
+			var flag = this.checked;
+			$(":checkbox[name='items']").attr("checked",flag);	
+		});
+
+		$(":checkbox[name='items']").click(function(){
+			$("#checkall").attr("checked",
+				$(":checkbox[name='items']").length == 
+				$(":checkbox[name='items']:checked"));
+		});	
+	});
+
+
+  //-->
+  </script>
+ </head>
+ <body>
+	<center>
+		选择你的爱好<br/>
+		<input type="checkbox" id="checkall">全选/全不选<br/>
+		<input type="checkbox" name="items" id="bastball">篮球<br/>
+		<input type="checkbox" name="items" id="football">足球<br/>
+	</center>
+ </body>
+</html>
