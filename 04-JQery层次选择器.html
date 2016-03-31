@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+  <!--导入jQuery库-->
+  <script type="text/javascript" src="jquery-1.11.3.js"></script>
+  <script type="text/javascript">
+  <!--
+	$(function(){
+		//选择id为btn——1的元素
+		//为选择的Jquery元素添加事件$("#btn_1").click(function(){}
+		//Dom如果选择控件不存在会报空指针异常
+		//jQuery的话会继续执行
+		$("#btn_1").click(function(){
+			$("#one").css("background","#ffbbaa");
+		});
+		$("#btn_2").click(function(){
+			$(".mini").css("background","#ccff33");
+		});
+		$("#btn_3").click(function(){
+			$("div").css("background","#ccff33");
+		});
+		$("#btn_4").click(function(){
+			$("*").css("background","#ccff33");
+		});
+		$("#btn_5").click(function(){
+				//选择多个
+			$("span,#two").css("background","#ccff33");
+		});
+	//////////////////////////////////////////////////////////////////////////////////////////
+		$("#btn_6").click(function(){
+			$("body div").css("background","#ccff33");
+		});
+		$("#btn_7").click(function(){
+			$("body > div").css("background","#ccff33");
+		});
+		$("#btn_8").click(function(){
+			//紧邻的元素，若不紧邻则无效
+			$("#one + div").css("background","#ccff33");
+		});
+		$("#btn_9").click(function(){
+			$("#two ~ div").css("background","#ccff33");
+		});
+		$("#btn_10").click(function(){
+			$("#two").siblings("div").css("background","#ccff33");
+		});
+		$("#btn_11").click(function(){
+			$("#one").nextAll("span:first").css("background","#ccff33");
+		});
+		$("#btn_12").click(function(){
+			$("#two").prevAll("div").css("background","#ccff33");
+		});
+	});
+
+  //-->
+  </script>
+
+  <style type="text/css">
+	*{
+		margin:5px;
+		padding:0px;
+	}
+
+	body{
+		width:100%;
+		height:100%;
+	}
+
+	.center_div{
+		 width: 100%;
+		 height: 100%;
+		 overflow: auto;
+		 margin: auto;
+		 position: absolute;
+		 top: 0; 
+		 left: 0;
+		 bottom: 0;
+		 right: 0;
+	}
+
+	.center_{
+		 width: 150px;
+		 height: 50px;
+		 overflow: auto;
+		 margin: auto;
+		 position: absolute;
+		 top: 0; 
+		 left: 0;
+		 bottom: 0;
+		 right: 0;
+		}
+
+		.btn_1{
+			 width: 180px;
+			 height: 40px;
+		}
+
+		.btn_2{
+			 width: 180px;
+			 height: 40px;
+		}
+
+		.btn_3{
+			 width: 180px;
+			 height: 40px;
+		}
+
+		.btn_4{
+			 width: 180px;
+			 height: 40px;
+		}
+
+		.btn_5{
+			 width: 180px;
+			 height: 40px;
+		}
+
+		.one{
+			width: 160px;
+			height: 400px;
+			background:#ffffff;
+			border:1px solid #00F;
+		}
+
+		.one_span{
+			width: 160px;
+			height: 400px;
+			background:#ffffff;
+			border:1px solid #00F;
+			/*
+				变为块级元素
+			*/
+			display:block;
+		}
+
+		.mini{
+			width: 150px;
+			height: 50px;
+			background:#ccffff;
+			border:1px solid #00F;
+
+		}
+
+		span{
+			float:left;
+		}
+
+		div{ 
+			//display:inline;
+			float:left;
+		}
+  </style>
+ 
+ </head>
+ <body>
+	
+	<input class="btn_1" type="button" value="选择body的所有div元素" id="btn_6">
+	<input class="btn_1" type="button" value="选择所有子元素都是div的元素" id="btn_7">
+	<input class="btn_1" type="button" value="id为one的下一个DIV" id="btn_8">
+	<input class="btn_1" type="button" value="选择id为two后面的所有div兄弟元素" id="btn_9">
+	<input class="btn_1" type="button" value="选择id为two的所有div兄弟元素" id="btn_10">
+	<input class="btn_1" type="button" value="选择id为one的下一个span" id="btn_11">
+	<input class="btn_1" type="button" value="选择id为two的前边所有的div2016/3/31" id="btn_12">
+
+	<br/>
+	<br/>
+	<hr/>
+
+	<br/>
+	<input class="btn_1" type="button" value="id为one的元素" id="btn_1">
+	<input class="btn_2" type="button" value="选择class为mini的所有元素" id="btn_2">
+	<input class="btn_3" type="button" value="选择div的所有元素" id="btn_3">
+	<input class="btn_4" type="button" value="选择所有的元素" id="btn_4">
+	<input class="btn_5" type="button" value="选择所有span的元素和id为two的元素" id="btn_5">
+
+	<br/>
+	<br/>
+	<hr/>
+	<br/>
+	<div class="one" id="one">
+		
+		id=one class=one; 
+		<div class="mini">
+			class=mini；
+		</div>
+	</div>
+	
+	<div class="one" id="two" title="test">
+		
+		id=one class=two; div
+		<div class="mini" title="other">
+			class=mini；title="other"
+		</div>
+
+		<div class="mini" title="test">
+			class=mini；title="test"
+		</div>
+	
+	</div>
+	
+	<div class="one" id="one_1">
+		
+		id=one class=one; 
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini"></div>
+	</div>
+
+	<div class="one" id="one_2">
+		id=one class=one; 
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini">class=mini</div>
+		<div class="mini" title="test"></div>
+	</div>
+
+	<div class="one" >
+		包含input的type为hidden的div
+		<input type="hidden" value="input">
+		
+	</div>
+	<span class="one_span">
+		span元素
+
+
+
+	</span>
+
+	<span class="one_span">
+		span元素
+
+
+
+	</span>
+
+ </body>
+</html>
