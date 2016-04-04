@@ -12,45 +12,18 @@
   <script type="text/javascript">
   <!--
 	$(document).ready(function(){
-	
-		function anmateIt(){
-			$("#mover").slideToggle("slow",anmateIt)
-		}
-		anmateIt();
 		$("#btn_1").click(function(){
-			$("div:first").css("background","#ff9900");
+			$("div:contains('di')").css("background","#ff9900");
 		});
 		$("#btn_2").click(function(){
-			$("div:last").css("background","#ff9900");
+			$("div:empty").css("background","#ff9900");
 		});
 		$("#btn_3").click(function(){
-			$("div:not(.one)").css("background","#ff9900");
+			$("div:has(.mini)").css("background","#ff9900");
 		});
 		$("#btn_4").click(function(){
-			$("div:even").css("background","#ff9900");
-		});
-		$("#btn_5").click(function(){
-			$("div:odd").css("background","#ff9900");
-		});
-		$("#btn_6").click(function(){
-			$("div:gt(3)").css("background","#ff9900");
-		});
-
-		$("#btn_7").click(function(){
-			$("div:eq(3)").css("background","#ff9900");
-		});
-		$("#btn_8").click(function(){
-			$("div:lt(3)").css("background","#ff9900");
-		});
-		$("#btn_9").click(function(){
-			$(":header").css("background","#ff9900");
-		});
-
-		$("#btn_10").click(function(){
-			$(":animated").css("background","#ff9900");
-		});
-		$("#btn_11").click(function(){
-			$("#two").nextAll("span:first").css("background","#ff9900");
+			$("div:parent").css("background","#ff9900");
+			//或$("div:not(:empty)").css("background","#ff9900");
 		});
 	});
 
@@ -176,46 +149,29 @@
  
  </head>
  <body>
-	
-	<input class="btn_1" type="button" value="选择第一个DIV元素" id="btn_1">
-	<input class="btn_1" type="button" value="选择最后一个DIV元素" id="btn_2">
-	<input class="btn_1" type="button" value="选择所有CLASS不为ONE的元素" id="btn_3">
-	<input class="btn_1" type="button" value="选择索引值为偶数的元素" id="btn_4">
-	<input class="btn_1" type="button" value="选择索引值为奇数的元素" id="btn_5">
-	<input class="btn_1" type="button" value="选择索引值大于3的元素" id="btn_6">
-	<input class="btn_1" type="button" value="选择索引值等于3的元素" id="btn_7">
-	<input class="btn_1" type="button" value="选择索引值小于3的元素" id="btn_8">
-	<input class="btn_1" type="button" value="选择所有的标题元素" id="btn_9">
-	<input class="btn_1" type="button" value="选择当前正在执行动画的元素" id="btn_10">
-	<input class="btn_1" type="button" value="选择id为two的下一个SPAN元素" id="btn_11">   
-
+	<input class="btn_1" type="button" value="选择含有文本di的元素" id="btn_1">
+	<input class="btn_1" type="button" value="选择不包含子元素（或者文本元素）的DIV元素" id="btn_2">
+	<input class="btn_1" type="button" value="选择含有class为mini的div元素" id="btn_3">
+	<input class="btn_1" type="button" value="选择含有子元素（或者文本元素的div）" id="btn_4">
 	<br/>
 	<hr/>
 	<br/>
-	
 	<div class="one" id="one">
-		
 		id=one class=one; 
 		<div class="mini">
 			class=mini；
 		</div>
 	</div>
-	
 	<div class="one" id="two" title="test">
-		
 		id=one class=two; div
 		<div class="mini" title="other">
 			class=mini；title="other"
 		</div>
-
 		<div class="mini" title="test">
 			class=mini；title="test"
 		</div>
-	
 	</div>
-	
 	<div class="one" id="one_1">
-		
 		id=one class=one; 
 		<div class="mini">class=mini</div>
 		<div class="mini">class=mini</div>
@@ -223,7 +179,6 @@
 		<div class="mini">class=mini</div>
 		<div class="mini"></div>
 	</div>
-
 	<div class="one" id="one_2">
 		id=one class=one; 
 		<div class="mini">class=mini</div>
@@ -232,10 +187,6 @@
 		<div class="mini">class=mini</div>
 		<div class="mini" title="test"></div>
 	</div>
-
 	<div class="div_1" id="mover">动画</div>
-	<span class="one_span">span元素</span>
-	<span class="one_span">span元素</span>
-
  </body>
 </html>
