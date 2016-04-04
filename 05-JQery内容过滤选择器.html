@@ -13,18 +13,17 @@
   <!--
 	$(document).ready(function(){
 		$("#btn_1").click(function(){
-			$("div:contains('di')").css("background","#ff9900");
+			$("div:visible").css("background","#ff9900");
 		});
 		$("#btn_2").click(function(){
-			$("div:empty").css("background","#ff9900");
+			//.show(time)是不可见的时间变为可见
+			//jquery支持连续 点
+			$("div:hidden").show(2000).css("background","#ff9900");
 		});
 		$("#btn_3").click(function(){
-			$("div:has(.mini)").css("background","#ff9900");
+			alert($("input:hidden").val());
 		});
-		$("#btn_4").click(function(){
-			$("div:parent").css("background","#ff9900");
-			//或$("div:not(:empty)").css("background","#ff9900");
-		});
+		
 	});
 
   //-->
@@ -52,9 +51,7 @@
 		 bottom: 0;
 		 right: 0;
 	}
-
 	.center_{
-
 		 width: 150px;
 		 height: 50px;
 		 overflow: auto;
@@ -98,23 +95,12 @@
 			border:1px solid #00F;
 		}
 
-		.one_span{
-			width: 160px;
-			height: 400px;
-			background:#ffffff;
-			border:1px solid #00F;
-			/*
-				变为块级元素
-			*/
-			display:block;
-		}
-
 		.mini{
 			width: 150px;
 			height: 50px;
 			background:#ccffff;
 			border:1px solid #00F;
-
+			display:none;
 		}
 
 		span{
@@ -125,7 +111,9 @@
 			//display:inline;
 			float:left;
 		}
-	
+	/*
+	动画
+	*/
 	.div_1{
 		height: 400px;
 		width:150px;
@@ -149,10 +137,12 @@
  
  </head>
  <body>
-	<input class="btn_1" type="button" value="选择含有文本di的元素" id="btn_1">
-	<input class="btn_1" type="button" value="选择不包含子元素（或者文本元素）的DIV元素" id="btn_2">
-	<input class="btn_1" type="button" value="选择含有class为mini的div元素" id="btn_3">
-	<input class="btn_1" type="button" value="选择含有子元素（或者文本元素的div）" id="btn_4">
+	2016/4/5
+	<br/>
+	<hr/>
+	<input class="btn_1" type="button" value="选择所有可见的DIV元素" id="btn_1">
+	<input class="btn_1" type="button" value="选择所有不可见的DIV元素" id="btn_2">
+	<input class="btn_1" type="button" value="选择所有不可见的input元素" id="btn_3">
 	<br/>
 	<hr/>
 	<br/>
@@ -187,6 +177,7 @@
 		<div class="mini">class=mini</div>
 		<div class="mini" title="test"></div>
 	</div>
-	<div class="div_1" id="mover">动画</div>
+	2016/4/5
+	<input type="hidden" value="input">
  </body>
 </html>
