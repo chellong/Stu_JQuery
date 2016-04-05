@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>简单应用</title>
+  <script type="text/javascript" src="jquery-1.11.3.js"></script>
+  <script type="text/javascript">
+  <!--
+	$(function(){
+		$("p").click(function(){
+			/*
+				转换成JQuery对象
+				隐式迭代；
+				JQuery是一个DOM对象的数组，在响应函数中this是一个DOM对象
+				要使用JQuery使用$()将this包装起来
+				text不加参数的时候读取，加参数为写对象
+				相似的还有attr（），val（）
+			*/
+			alert($(this).text());
+			$(this).text("^^" + $(this).text())
+		});
+		$("table:first tr:even").css("background","#ff9900");
+
+		$("button").click(function(){
+			var len = $(":checkbox:checked").length;
+			alert(len);
+		});
+	});
+  //-->
+  </script>
+
+  <style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+
+	body{
+		width:100%;
+		height:100%;
+	}
+  </style>
+ 
+ </head>
+ <body>
+	<center>
+		<p>段落一</p>
+		<p>段落一</p>
+		<p>段落一</p>
+	</center>
+
+	<table>
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+		<tr>
+			<td>第一行</td>
+			<td>第二行</td>
+		</tr>
+
+	</table>
+	
+
+	<hr>
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+	<input style="width:16px;height:16px" type="checkbox" name="test"> 
+
+	<button>选中的个数</button>
+ </body>
+</html>
