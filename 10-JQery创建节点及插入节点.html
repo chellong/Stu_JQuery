@@ -11,12 +11,40 @@
   <script type="text/javascript">
   <!--
 		/*
-			通过JQuery的操作文本节点，属性节点及查找元素节点
+			1.通过JQuery的操作文本节点，属性节点及查找元素节点
+			2.插入节点
 		*/
-		Window.onload = function(){
+		$(function(){
+			/*
+				1.操作文本节点
+			*/
+			//alert($("#bj").text());
+			//$("#bj").text($("#bj").text()+ "  更改后");
 
+			/*
+				1.操作属性节点  attr方法 
+				直接操作val属性值，可以使用跟便捷的val方法
+			*/
+			//alert($(":text[name='username']").attr("value"));
+			//$(":text[name='username']").attr("value","hhahaha")
+			
+			/*
+				2.1 创建节点，使用标准的闭合标签
+				使用$(html)；
+				创建
+				<li id='test'>test</li>
+			*/
+			//$("<li id='test'>test</li>").appendTo($("#city"));
+			//$("#city").append("<li id='test'>test</li>");
+			//alert($("#test").text());
+			
+			//$("<li id='test'>test</li>").insertAfter($("#bj"));//插入到后面
+			//$("#bj").after("<li id='test'>test</li>");//插入到后面
+			//$("<li id='test'>test</li>").insertBefore($("#bj"));//插入到后面
+			$("#bj").before("<li id='test'>test</li>");//插入到前面
 
-		}
+			
+		});
   //-->
   </script>
 
@@ -33,6 +61,11 @@
   </style>
  </head>
  <body>
+ <center>
+ <br>
+ <br>
+ <br>
+ <br>
 	<p>你喜欢哪个城市</p>
 	<ul id="city" >
 		<li id="bj" name="beijing">北京</li>
@@ -40,5 +73,27 @@
 		<li>东京</li>
 		<li>首尔</li>
 	</ul>
+
+	<br><br>
+
+	<p>你喜欢哪个游戏</p>
+	<ul id="city" >
+		<li id="bj" name="beijing">红警</li>
+		<li >实况</li>
+		<li>极品</li>
+		<li>魔兽</li>
+	</ul>
+
+	<br><br>
+
+	gender:
+	<input type="radio" name="gender" value="male"/>Male
+	<input type="radio" name="gender" value="female"/>female
+	<br><br>
+
+	name:
+	<input type="text" name="username" value="username">
+
+</center>
  </body>
 </html>
