@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>简单应用</title>
+  <script type="text/javascript" src="jquery-1.11.3.js"></script>
+  <style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+	}
+
+	body{
+		width:100%;
+		height:100%;
+	}
+
+	.input_1{
+		width:180px;
+		height:20px;
+	}
+
+	.altrowstable {
+		font-size:11px;
+		color:#333333;
+		border-width: 1px;
+		border-color: #a9c6c9;
+		border-collapse: collapse;
+	}
+	.altrowstable th {
+		width:180px;
+		height:20px;
+		padding: 8px;
+		font-size:16px;
+		border:1px solid #a9c6c9;
+	}
+	.altrowstable td {
+		width:180px;
+		height:20px;
+		padding: 8px;
+		border:1px solid #a9c6c9;
+	}
+	.oddrowcolor{
+		background-color:#d4e3e5;
+	}
+	.evenrowcolor{
+		background-color:#c3dde0;
+	}
+  </style>
+  <script type="text/javascript">
+		
+		/*
+			JQquery对象如果返回的是一个对象，则这个对象一定子是JQuery对象
+		*/
+
+		window.onload=function(){
+			altRows('alternatecolor');
+
+			$("#alternatecolor a").click(function(){
+				return removeTr(this);
+			});
+			
+			$("#btn").click(function(){
+				
+				$("<tr></tr>").append("<td>" + $("#name").val() + "</td>")
+							  .append("<td>" + $("#email").val() + "</td>")
+							  .append("<td>" + $("#salary").val() + "</td>")
+							  .append("<td><a href='#' >删除</a></td>")
+							  .appendTo("#alternatecolor ");
+
+				altRows('alternatecolor');
+			});
+			
+		}
+
+		function altRows(id){
+			if(document.getElementsByTagName){  
+				var table = document.getElementById(id);  
+				var rows = table.getElementsByTagName("tr"); 
+				 
+				for(i = 0; i < rows.length; i++){          
+					if(i % 2 == 0){
+						rows[i].className = "evenrowcolor";
+					}else{
+						rows[i].className = "oddrowcolor";
+					}      
+				}
+			}
+		}
+
+		function removeTr(aNoe){
+			
+			var $trNode = $(aNoe).parent().parent();
+			var textContent = $trNode.find("td:first").text();
+			textContent = $.trim(textContent);
+
+			var flag = confirm("确定要删除吗？" + textContent + "的信息吗？");
+
+			if(flag){
+				$trNode.remove();
+			}
+			return false;
+		}
+
+		
+ </script>
+ </head>
+ <body>
+ <br/>
+ <br/>
+ <br/>
+ <br/>
+	<center>
+		添加新员工<br/><br/>
+		name&nbsp&nbsp: <input class="input_1" type="text" id="name" name="empty"/>
+		email&nbsp:<input class="input_1" type="text" id="email" name="empty"/>
+		salary:<input class="input_1" type="text" id="salary" name="empty"/>
+		<button id="btn" style="width:70px;height:20px;">添加</button>
+	</center>
+	<br/>
+	<br/>
+	<hr>
+	<br/>
+	<br/>
+	<center>
+		<table class="altrowstable" id="alternatecolor">
+			<tbody>
+				<tr>
+					<th>name</th>
+					<th>email</th>
+					<th>salary</th>
+					<th></th>
+				</tr>
+
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td><a href="#">删除</a></td>
+				</tr>
+
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td><a href="#">删除</a></td>
+				</tr>
+
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td><a href="#">删除</a></td>
+				</tr>
+
+				<tr>
+					<td>test</td>
+					<td>test</td>
+					<td>test</td>
+					<td><a href="#">删除</a></td>
+				</tr>
+			<tbody>
+		</table>
+	</center>
+ </body>
+</html>
